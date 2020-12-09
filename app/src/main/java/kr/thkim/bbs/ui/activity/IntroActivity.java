@@ -1,10 +1,11 @@
-package kr.thkim.bbs;
+package kr.thkim.bbs.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import kr.thkim.bbs.R;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
