@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.firebase-perf'
 }
 
 android {
@@ -68,6 +70,9 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10' // 디슈가링, 자바8 람다,스트림 사용
 
     implementation 'androidx.multidex:multidex:2.0.1' //multidex
+
+    //google
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
 
     // Android 11 onStartResult Deprecated 대응
     implementation 'androidx.activity:activity:1.2.0-beta01'

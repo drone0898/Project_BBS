@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "943918572321",
+    "firebase_url": "https://android-bbs-719ab-default-rtdb.firebaseio.com",
+    "project_id": "android-bbs-719ab",
+    "storage_bucket": "android-bbs-719ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943918572321:android:21453e5dd811724dce5460",
+        "android_client_info": {
+          "package_name": "kr.thkim.bbs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943918572321-a4qc8naq9tpquog2rsv6qhj8f1rgm460.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.thkim.bbs",
+            "certificate_hash": "5f8be63bd9da33a17a4d8202de8949e4d13a1c46"
+          }
+        },
+        {
+          "client_id": "943918572321-s47ookkhvuh6rp2uji3nl5pc3kbsgi2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV000QFmcPpgPw1uJMUsXdF6WNjXAzdaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943918572321-s47ookkhvuh6rp2uji3nl5pc3kbsgi2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

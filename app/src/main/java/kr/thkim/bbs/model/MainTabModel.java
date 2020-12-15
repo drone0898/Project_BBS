@@ -42,4 +42,11 @@ public class MainTabModel {
     public void setLayout(int layout) {
         this.layout = layout;
     }
+
+    public MainTabModel(String tabName, int icon, Class<? extends BaseFragment<?, ?>> fragment, int layout) {
+        this.tabName = tabName;
+        this.icon = icon;
+        this.fragment = fragment;
+        this.layout = layout;
+    }
 }

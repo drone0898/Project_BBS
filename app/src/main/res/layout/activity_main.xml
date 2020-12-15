@@ -17,6 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_app_bar"
+            android:visibility="gone"/>
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"
@@ -25,14 +29,14 @@
             app:layout_constraintBottom_toTopOf="@+id/tabLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/include">
 
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/main_viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior=".ui.behavior.HideBottomViewOnScrollBhv"/>
+                app:layout_behavior=".ui.behavior.HideBottomViewOnScrollBhv" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -40,7 +44,7 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@drawable/tab_stroke"
+            android:background="@color/color_primary_dark"
             android:padding="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

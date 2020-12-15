@@ -1,15 +1,34 @@
 package kr.thkim.bbs.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import kr.thkim.bbs.R;
+import kr.thkim.bbs.databinding.ActivityIntroBinding;
+import kr.thkim.bbs.vm.IntroViewModel;
 
-import android.os.Bundle;
-
-public class IntroActivity extends AppCompatActivity {
+public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewModel> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutResourceId() {
+        return R.layout.activity_intro;
+    }
+
+    @Override
+    protected IntroViewModel getViewModel() {
+        return new ViewModelProvider(this).get(IntroViewModel.class);
+    }
+
+    @Override
+    protected void initialize() {
+
+    }
+
+    @Override
+    protected void initDataBinding() {
+        startTargetActivity(MainActivity.class,null,false);
+    }
+
+    @Override
+    protected void eventBinding() {
+
     }
 }

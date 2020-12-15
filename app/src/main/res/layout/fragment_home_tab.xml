@@ -45,8 +45,9 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/main_wallpaper"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_foreground"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/er"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -55,9 +56,10 @@
                 android:id="@+id/weekly_rotation_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text="금주의 로테이션"
+                android:text="weekly_rotation_title"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
