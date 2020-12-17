@@ -13,6 +13,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
 import io.reactivex.disposables.CompositeDisposable;
 import kr.thkim.bbs.BaseApplication;
+import kr.thkim.bbs.arch.SingleLiveEvent;
 
 /**
  * ViewModel의 공통기능들을 상속해준다.
@@ -37,16 +38,8 @@ public abstract class BaseViewModel extends AndroidViewModel implements Lifecycl
 
     protected BaseApplication baseApplication;
     public CompositeDisposable compositeDisposable = new CompositeDisposable();
-    MutableLiveData<String> event = new MutableLiveData<>();
-    MutableLiveData<Intent> intentEvent = new MutableLiveData<>();
-
-    public MutableLiveData<String> getEvent() {
-        return event;
-    }
-
-    public MutableLiveData<Intent> getIntentEvent() {
-        return intentEvent;
-    }
+    SingleLiveEvent<String> event = new SingleLiveEvent<>();
+    SingleLiveEvent<Intent> intentEvent = new SingleLiveEvent<>();
 
     public BaseViewModel(@NonNull Application application) {
         super(application);

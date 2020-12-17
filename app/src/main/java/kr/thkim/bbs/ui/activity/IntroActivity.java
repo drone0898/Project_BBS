@@ -24,7 +24,7 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewM
 
     @Override
     protected void initDataBinding() {
-        startTargetActivity(MainActivity.class,null,false);
+        startTargetActivity(MapViewActivity.class,null,false);
     }
 
     @Override
