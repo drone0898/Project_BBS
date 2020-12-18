@@ -3,18 +3,18 @@ package kr.thkim.bbs.ui.fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import kr.thkim.bbs.R;
-import kr.thkim.bbs.databinding.FragmentHomeTabBinding;
-import kr.thkim.bbs.vm.HomeTabViewModel;
+import kr.thkim.bbs.databinding.FragmentRouteTabBinding;
+import kr.thkim.bbs.vm.RouteViewModel;
 
-public class HomeTabFragment extends BaseFragment<FragmentHomeTabBinding, HomeTabViewModel> {
+public class RouteTabFragment extends BaseFragment<FragmentRouteTabBinding, RouteViewModel> {
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.fragment_home_tab;
+        return R.layout.fragment_route_tab;
     }
 
     @Override
-    protected HomeTabViewModel getViewModel() {
-        return new ViewModelProvider(this).get(HomeTabViewModel.class);
+    protected RouteViewModel getViewModel() {
+        return new ViewModelProvider(this).get(RouteViewModel.class);
     }
 
     @Override

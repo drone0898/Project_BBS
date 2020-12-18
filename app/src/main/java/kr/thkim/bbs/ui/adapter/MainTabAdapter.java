@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import kr.thkim.bbs.model.MainTabModel;
 import kr.thkim.bbs.ui.fragment.BaseFragment;
-import kr.thkim.bbs.ui.fragment.TabBaseFragment;
 import kr.thkim.bbs.util.LoggerUtil;
 
 /**
@@ -42,9 +41,7 @@ public class MainTabAdapter extends FragmentStateAdapter {
         if (position < itemList.size()) {
             try {
                 Constructor<?> constructor = itemList.get(position).getFragment().getConstructor();
-                TabBaseFragment<?,?> f = (TabBaseFragment<?,?>) constructor.newInstance();
-                f.initNewInstance(itemList.get(position));
-                return f;
+                return (BaseFragment<?,?>) constructor.newInstance();
             } catch (Exception e) {
                 LoggerUtil.e(e + "\nFRAGMENT NOT FOUND EXCEPTION!! Make sure your fragment have " +
                         "'PUBLIC' Default Constructor");

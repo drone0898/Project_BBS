@@ -1,14 +1,10 @@
 package kr.thkim.bbs.ui.activity;
 
-import android.content.Context;
-import android.view.View;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -19,6 +15,9 @@ import kr.thkim.bbs.databinding.LayoutTabItemBinding;
 import kr.thkim.bbs.model.MainTabModel;
 import kr.thkim.bbs.ui.adapter.MainTabAdapter;
 import kr.thkim.bbs.ui.fragment.HomeTabFragment;
+import kr.thkim.bbs.ui.fragment.InformationTabFragment;
+import kr.thkim.bbs.ui.fragment.MyProfileTabFragment;
+import kr.thkim.bbs.ui.fragment.RouteTabFragment;
 import kr.thkim.bbs.vm.MainViewModel;
 
 public class MainActivity extends BaseFragmentActivity<ActivityMainBinding, MainViewModel> {
@@ -45,7 +44,7 @@ public class MainActivity extends BaseFragmentActivity<ActivityMainBinding, Main
     @Override
     protected void initDataBinding() {
         mainTabAdapter = setViewPagerAdapter(binding.mainViewpager);
-        ArrayList<MainTabModel> tabs = getTabModels(this);
+        ArrayList<MainTabModel> tabs = getTabModels();
         binding.mainViewpager.setOffscreenPageLimit(tabs.size()); // 모든 탭을 로딩하도록 만듬
         mainTabAdapter.setItemList(tabs);
         tabItemBindings = new LayoutTabItemBinding[tabs.size()];
@@ -105,16 +104,16 @@ public class MainActivity extends BaseFragmentActivity<ActivityMainBinding, Main
         return adapter;
     }
 
-    public ArrayList<MainTabModel> getTabModels(@NonNull Context context) {
+    public ArrayList<MainTabModel> getTabModels() {
         ArrayList<MainTabModel> models = new ArrayList<>();
         models.add(new MainTabModel("홈", R.drawable.ic_round_home_24,
                 HomeTabFragment.class, R.layout.fragment_home_tab));
         models.add(new MainTabModel("루트", R.drawable.ic_round_home_24,
-                HomeTabFragment.class, R.layout.fragment_home_tab));
+                RouteTabFragment.class, R.layout.fragment_home_tab));
         models.add(new MainTabModel("정보", R.drawable.ic_round_home_24,
-                HomeTabFragment.class, R.layout.fragment_home_tab));
+                InformationTabFragment.class, R.layout.fragment_information_tab));
         models.add(new MainTabModel("내 정보", R.drawable.ic_round_person_24,
-                HomeTabFragment.class, R.layout.fragment_home_tab));
+                MyProfileTabFragment.class, R.layout.fragment_home_tab));
         return models;
     }
 }
