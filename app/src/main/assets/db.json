@@ -250,7 +250,7 @@
     {
       "id": 19,
       "eng_name": "",
-      "name": "권총",
+      "name": "발터 PPK",
       "grade": "일반",
       "equip": "무기",
       "kinds": "권총",
@@ -536,7 +536,7 @@
     {
       "id": 41,
       "eng_name": "",
-      "name": "쇠니",
+      "name": "쇠뇌",
       "grade": "고급",
       "equip": "무기",
       "kinds": "석궁",

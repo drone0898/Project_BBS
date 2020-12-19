@@ -1,6 +1,7 @@
 package kr.thkim.bbs.ui.activity;
 
 import androidx.lifecycle.ViewModelProvider;
+import kr.thkim.bbs.BuildConfig;
 import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ActivityIntroBinding;
 import kr.thkim.bbs.vm.IntroViewModel;
@@ -24,7 +25,11 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewM
 
     @Override
     protected void initDataBinding() {
-        startTargetActivity(MapViewActivity.class,null,false);
+        if(BuildConfig.DEBUG){
+            startTargetActivity(DevActivity.class,null,false);
+        }else{
+            startTargetActivity(MapViewActivity.class,null,false);
+        }
     }
 
     @Override

@@ -73,6 +73,7 @@ dependencies {
 
     //google
     implementation platform('com.google.firebase:firebase-bom:26.1.1')
+    implementation 'com.google.firebase:firebase-firestore:22.0.0'
 
     // Android 11 onStartResult Deprecated 대응
     implementation 'androidx.activity:activity:1.2.0-beta01'

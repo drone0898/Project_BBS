@@ -6,5 +6,13 @@ public final class Global {
 
     public static boolean dontUseLogger = true;
 
+
+    /**
+     * Firestore
+     * android-bbs-719ab
+     *
+     */
+    public static final String ITEM_INFO = "item_info";
+
 }
 

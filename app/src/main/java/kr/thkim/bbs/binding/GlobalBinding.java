@@ -1,7 +1,5 @@
 package kr.thkim.bbs.binding;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;

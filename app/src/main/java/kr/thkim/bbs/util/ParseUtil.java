@@ -1,28 +1,51 @@
 package kr.thkim.bbs.util;
 
 
+import android.app.Activity;
+import android.content.Context;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import androidx.annotation.NonNull;
+import kr.thkim.bbs.ui.activity.BaseActivity;
 
 public final class ParseUtil {
 
     private static Gson gson = null;
+
+    public static String loadJSONFromAsset(Context context, String filename) {
+        String json = null;
+        try {
+            InputStream is = context.getAssets().open(filename);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return json;
+    }
+
+
     public static Gson getGson() {
         if(gson == null){
             gson = new GsonBuilder().create();
         }
         return gson;
     }
-
 
     public static <T> T fromJson(@NonNull String json, Class<T> type){
         return getGson().fromJson(json,type);
