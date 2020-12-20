@@ -1,5 +1,7 @@
 package kr.thkim.bbs.ui.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,8 +46,8 @@ public abstract class BaseFragment <V extends ViewDataBinding, M extends BaseVie
         initialize();
 
         this.binding = DataBindingUtil.inflate(inflater, getLayoutResourceId(), container,false);
-//        binding.setVariable(BR.fragment, this);
-//        binding.setVariable(BR.viewModel, viewModel);
+        binding.setVariable(BR.fragment, this);
+        binding.setVariable(BR.viewModel, viewModel);
         binding.setLifecycleOwner(this); // 바인딩과 라이프사이클을 연결해 LiveData를 사용할 수 있다.
         getLifecycle().addObserver(viewModel); // 뷰모델이 LifecycleObserver를 구현하므로 옵저버를 추가
         initDataBinding();
@@ -83,6 +85,31 @@ public abstract class BaseFragment <V extends ViewDataBinding, M extends BaseVie
         super.onDestroy();
         if (compositeDisposable != null && !compositeDisposable.isDisposed()) {
             compositeDisposable.dispose();
+        }
+    }
+
+    /**
+     * @param maintain true면 백스택 유지, false면 초기화
+     */
+    public void startTargetActivity(Class<?> target, Bundle extraData, boolean maintain) {
+        Uri uri = getActivity().getIntent().getData();
+
+        Intent cIntent = new Intent(getActivity(), target);
+        if (extraData != null) {
+            cIntent.putExtras(extraData);
+        }
+        if (uri != null) {
+            cIntent.setData(uri);
+        }
+        if (!maintain) {
+            cIntent.addFlags(
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                            Intent.FLAG_ACTIVITY_SINGLE_TOP |
+                            Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        }
+        startActivity(cIntent);
+        if (!maintain) {
+            getActivity().finish();
         }
     }
 }

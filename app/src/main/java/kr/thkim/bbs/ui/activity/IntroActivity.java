@@ -34,6 +34,13 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewM
 
     @Override
     protected void eventBinding() {
-
+        viewModel.event.observe(this,event->{
+            switch(event){
+                default:
+                    startTargetActivity(MainActivity.class,null,false);
+                    break;
+            }
+        });
+        viewModel.setCacheDB();
     }
 }

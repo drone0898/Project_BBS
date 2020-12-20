@@ -38,8 +38,8 @@ public abstract class BaseViewModel extends AndroidViewModel implements Lifecycl
 
     protected BaseApplication baseApplication;
     public CompositeDisposable compositeDisposable = new CompositeDisposable();
-    SingleLiveEvent<String> event = new SingleLiveEvent<>();
-    SingleLiveEvent<Intent> intentEvent = new SingleLiveEvent<>();
+    public SingleLiveEvent<String> event = new SingleLiveEvent<>();
+    public SingleLiveEvent<Intent> intentEvent = new SingleLiveEvent<>();
 
     public BaseViewModel(@NonNull Application application) {
         super(application);

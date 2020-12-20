@@ -10,6 +10,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentActivity;
 
 import io.reactivex.disposables.CompositeDisposable;
+import kr.thkim.bbs.BR;
 import kr.thkim.bbs.BaseApplication;
 import kr.thkim.bbs.vm.BaseViewModel;
 
@@ -40,8 +41,8 @@ public abstract class BaseFragmentActivity <V extends ViewDataBinding, M extends
         initialize();
 
         binding = DataBindingUtil.setContentView(this, getLayoutResourceId());
-//        binding.setVariable(BR.activity, this);
-//        binding.setVariable(BR.viewModel, viewModel);
+        binding.setVariable(BR.activity, this);
+        binding.setVariable(BR.viewModel, viewModel);
         binding.setLifecycleOwner(this); // 바인딩과 라이프사이클을 연결해 LiveData를 사용할 수 있다.
         getLifecycle().addObserver(viewModel); // 뷰모델이 LifecycleObserver를 구현하므로 옵저버를 추가
         initDataBinding();

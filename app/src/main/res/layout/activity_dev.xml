@@ -41,6 +41,13 @@
                 android:onClick="@{()->viewModel.onClickDebugBtn(2)}"
                 android:text="FireStore JSON 읽기" />
 
+            <Button
+                android:id="@+id/debug_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{()->viewModel.onClickDebugBtn(3)}"
+                android:text="시작하기" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

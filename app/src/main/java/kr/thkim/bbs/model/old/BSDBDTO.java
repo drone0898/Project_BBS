@@ -1,8 +1,9 @@
-package kr.thkim.bbs.model;
+package kr.thkim.bbs.model.old;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class BSDBDTO implements Serializable {
 
@@ -32,7 +33,7 @@ public class BSDBDTO implements Serializable {
  	public String toString(){
 		return 
 			"BSItemDTO{" + 
-			"items = '" + items + '\'' + 
+			"items = '" + items + '\'' +
 			",locations = '" + locations + '\'' + 
 			"}";
 		}

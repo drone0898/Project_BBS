@@ -1,7 +1,6 @@
 package kr.thkim.bbs.util;
 
 
-import android.app.Activity;
 import android.content.Context;
 
 import com.google.gson.Gson;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import androidx.annotation.NonNull;
-import kr.thkim.bbs.ui.activity.BaseActivity;
 
 public final class ParseUtil {
 

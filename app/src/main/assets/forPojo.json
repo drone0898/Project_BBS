@@ -1,0 +1,521 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "곡괭이",
+      "grade": "일반",
+      "equip": "무기",
+      "kinds": "도끼",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "15"
+        }
+      ],
+      "drop": [
+        {
+          "animal_id": 0,
+          "chance": 0.1
+        }
+      ],
+      "acq_loc": [
+        {
+          "location_id": 11,
+          "amount": 7
+        },
+        {
+          "location_id": 12,
+          "amount": 7
+        },
+        {
+          "location_id": 2,
+          "amount": 7
+        },
+        {
+          "location_id": 6,
+          "amount": 8
+        }
+      ],
+      "comb_mat": [],
+      "acqNumber": 0
+    },
+    {
+      "id": 2,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "가위",
+      "grade": "일반",
+      "equip": "무기",
+      "kinds": "단검",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "5"
+        }
+      ],
+      "drop": [
+        {
+          "animal_id": 0,
+          "chance": 0.1
+        }
+      ],
+      "acq_loc": [
+        {
+          "location_id": 0,
+          "amount": 7
+        },
+        {
+          "location_id": 8,
+          "amount": 6
+        },
+        {
+          "location_id": 13,
+          "amount": 6
+        }
+      ],
+      "comb_mat": [],
+      "acqNumber": 0
+    },
+    {
+      "id": 167,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "트라이아나",
+      "grade": "영웅",
+      "equip": "무기",
+      "kinds": "창",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "120"
+        },
+        {
+          "effect_type_id": 1,
+          "value": "-0.05"
+        }
+      ],
+      "drop": [],
+      "acq_loc": [],
+      "comb_mat": [
+        {
+          "item_id": 97,
+          "req": 1
+        },
+        {
+          "item_id": 98,
+          "req": 1
+        }
+      ],
+      "acqNumber": 0
+    },
+    {
+      "id": 168,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "방천화극",
+      "grade": "영웅",
+      "equip": "무기",
+      "kinds": "창",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "88"
+        },
+        {
+          "effect_type_id": 1,
+          "value": "-0.1"
+        },
+        {
+          "effect_type_id": 5,
+          "value": "37"
+        },
+        {
+          "effect_type_id": 10,
+          "value": "-0.4"
+        }
+      ],
+      "drop": [],
+      "acq_loc": [],
+      "comb_mat": [
+        {
+          "item_id": 99,
+          "req": 1
+        },
+        {
+          "item_id": 311,
+          "req": 1
+        }
+      ],
+      "acqNumber": 0
+    },
+    {
+      "id": 169,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "청룡언월도",
+      "grade": "영웅",
+      "equip": "무기",
+      "kinds": "창",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "130"
+        },
+        {
+          "effect_type_id": 1,
+          "value": "-0.1"
+        }
+      ],
+      "drop": [],
+      "acq_loc": [],
+      "comb_mat": [
+        {
+          "item_id": 99,
+          "req": 1
+        },
+        {
+          "item_id": 477,
+          "req": 1
+        }
+      ],
+      "acqNumber": 0
+    },
+    {
+      "id": 170,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "대소반룡곤",
+      "grade": "영웅",
+      "equip": "무기",
+      "kinds": "쌍절곤",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "50"
+        },
+        {
+          "effect_type_id": 5,
+          "value": "14"
+        },
+        {
+          "effect_type_id": 10,
+          "value": "-0.4"
+        }
+      ],
+      "drop": [],
+      "acq_loc": [],
+      "comb_mat": [
+        {
+          "item_id": 101,
+          "req": 1
+        },
+        {
+          "item_id": 474,
+          "req": 1
+        }
+      ],
+      "acqNumber": 0
+    },
+    {
+      "id": 171,
+      "eng_desc": "none",
+      "desc": "없음",
+      "name": "초진동눈차크",
+      "grade": "영웅",
+      "equip": "무기",
+      "kinds": "쌍절곤",
+      "effect": [
+        {
+          "effect_type_id": 0,
+          "value": "65"
+        },
+        {
+          "effect_type_id": 8,
+          "value": "0.5"
+        }
+      ],
+      "drop": [],
+      "acq_loc": [],
+      "comb_mat": [
+        {
+          "item_id": 102,
+          "req": 1
+        },
+        {
+          "item_id": 483,
+          "req": 1
+        }
+      ],
+      "acqNumber": 0
+    }
+  ],
+  "animals": [
+    {
+      "animal_id": 0,
+      "animal_name": "박쥐",
+      "drop_items": [
+        0,
+        2,
+        8,
+        14,
+        16,
+        24,
+        229,
+        230,
+        252,
+        272,
+        298,
+        299,
+        300,
+        302,
+        422,
+        449,
+        450,
+        451,
+        452,
+        453,
+        455,
+        459,
+        462,
+        463,
+        538
+      ]
+    },
+    {
+      "animal_id": 1,
+      "animal_name": "닭",
+      "drop_items": [
+        330,
+        450
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": 0,
+      "name": "골목길",
+      "eng_name": "Alley",
+      "drop_items": [
+        {
+          "item_id": 2,
+          "amount": 7
+        },
+        {
+          "item_id": 9,
+          "amount": 5
+        },
+        {
+          "item_id": 23,
+          "amount": 6
+        },
+        {
+          "item_id": 24,
+          "amount": 7
+        },
+        {
+          "item_id": 197,
+          "amount": 7
+        },
+        {
+          "item_id": 253,
+          "amount": 6
+        },
+        {
+          "item_id": 273,
+          "amount": 7
+        },
+        {
+          "item_id": 301,
+          "amount": 7
+        },
+        {
+          "item_id": 302,
+          "amount": 7
+        },
+        {
+          "item_id": 323,
+          "amount": 3
+        },
+        {
+          "item_id": 326,
+          "amount": 6
+        },
+        {
+          "item_id": 332,
+          "amount": 6
+        },
+        {
+          "item_id": 389,
+          "amount": 5
+        },
+        {
+          "item_id": 447,
+          "amount": 4
+        },
+        {
+          "item_id": 452,
+          "amount": 7
+        },
+        {
+          "item_id": 454,
+          "amount": 8
+        },
+        {
+          "item_id": 456,
+          "amount": 7
+        },
+        {
+          "item_id": 462,
+          "amount": 7
+        },
+        {
+          "item_id": 497,
+          "amount": 8
+        },
+        {
+          "item_id": 538,
+          "amount": 7
+        }
+      ],
+      "gen_animals": [
+        {
+          "animal_id": 1,
+          "amount": 8
+        },
+        {
+          "animal_id": 4,
+          "amount": 4
+        },
+        {
+          "animal_id": 5,
+          "amount": 3
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "양궁장",
+      "eng_name": "Archery range",
+      "drop_items": [
+        {
+          "item_id": 8,
+          "amount": 6
+        },
+        {
+          "item_id": 9,
+          "amount": 5
+        },
+        {
+          "item_id": 12,
+          "amount": 5
+        },
+        {
+          "item_id": 17,
+          "amount": 4
+        },
+        {
+          "item_id": 196,
+          "amount": 5
+        },
+        {
+          "item_id": 198,
+          "amount": 6
+        },
+        {
+          "item_id": 230,
+          "amount": 5
+        },
+        {
+          "item_id": 273,
+          "amount": 5
+        },
+        {
+          "item_id": 331,
+          "amount": 5
+        },
+        {
+          "item_id": 332,
+          "amount": 5
+        },
+        {
+          "item_id": 334,
+          "amount": 4
+        },
+        {
+          "item_id": 422,
+          "amount": 5
+        },
+        {
+          "item_id": 423,
+          "amount": 5
+        },
+        {
+          "item_id": 447,
+          "amount": 3
+        },
+        {
+          "item_id": 449,
+          "amount": 6
+        },
+        {
+          "item_id": 452,
+          "amount": 5
+        },
+        {
+          "item_id": 459,
+          "amount": 5
+        },
+        {
+          "item_id": 463,
+          "amount": 5
+        },
+        {
+          "item_id": 466,
+          "amount": 6
+        }
+      ],
+      "gen_animals": [
+        {
+          "animal_id": 0,
+          "amount": 3
+        },
+        {
+          "animal_id": 3,
+          "amount": 3
+        },
+        {
+          "animal_id": 4,
+          "amount": 4
+        }
+      ]
+    }
+  ],
+  "effect_types": [
+    {
+      "id": 0,
+      "name": "공격력",
+      "eng_name": "attack",
+      "desc": "",
+      "eng_desc": "",
+      "val_type": "int"
+    },
+    {
+      "id": 1,
+      "name": "이동 속도",
+      "eng_name": "",
+      "desc": "",
+      "eng_desc": "",
+      "val_type": "float"
+    },
+    {
+      "id": 2,
+      "name": "치명타 확률",
+      "eng_name": "",
+      "desc": "",
+      "eng_desc": "",
+      "val_type": "percent"
+    }
+  ]
+}

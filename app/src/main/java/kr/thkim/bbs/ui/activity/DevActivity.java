@@ -28,6 +28,14 @@ public class DevActivity extends BaseActivity<ActivityDevBinding, DevViewModel> 
 
     @Override
     protected void eventBinding() {
-
+        viewModel.event.observe(this,event->{
+            switch(event){
+                case "START":
+                    startTargetActivity(MainActivity.class,null,false);
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 }

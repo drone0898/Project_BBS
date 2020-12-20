@@ -1,7 +1,9 @@
 package kr.thkim.bbs.vm;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.os.Build;
+import android.widget.Toast;
 
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -10,8 +12,11 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 
-import kr.thkim.bbs.model.BSDBDTO;
-import kr.thkim.bbs.model.ItemDTO;
+import kr.thkim.bbs.model.AnimalsItem;
+import kr.thkim.bbs.model.BserDBModel;
+import kr.thkim.bbs.model.EffectTypesItem;
+import kr.thkim.bbs.model.ItemsItem;
+import kr.thkim.bbs.model.LocationsItem;
 import kr.thkim.bbs.util.Global;
 import kr.thkim.bbs.util.ParseUtil;
 
@@ -21,18 +26,43 @@ public class DevViewModel extends BaseViewModel {
         super(application);
     }
 
-    public void onClickDebugBtn(int id){
-        switch (id){
+    @SuppressLint("DefaultLocale")
+    public void onClickDebugBtn(int id) {
+        switch (id) {
             case 1:
-                CollectionReference reference = FirebaseFirestore.getInstance().collection(Global.ITEM_INFO);
-                BSDBDTO dbDTO = ParseUtil.fromJson(ParseUtil.loadJSONFromAsset(baseApplication,"db.json"), BSDBDTO.class);
-                List<ItemDTO> items = dbDTO.getItems();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    items.forEach(item->{
-                        reference.document("item"+String.format("%05d",item.getId()))
-                                .set(item);
-                    });
+                String json = ParseUtil.loadJSONFromAsset(baseApplication, "db.json");
+                if (json != null) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        Toast.makeText(baseApplication, "NO",
+                                Toast.LENGTH_SHORT).show();
+//                        CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_ANIMAL_INFO);
+//                        CollectionReference effTypeRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_EFFECT_TYPES);
+//                        CollectionReference itemRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_ITEM_INFO);
+//                        CollectionReference locRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_LOCATION_INFO);
+//
+//                        BserDBModel db = ParseUtil.fromJson(json, BserDBModel.class);
+//
+//                        List<AnimalsItem> animalsItemList = db.getAnimals();
+//                        List<EffectTypesItem> effectTypesItemList = db.getEffectTypes();
+//                        List<ItemsItem> itemsItemList = db.getItems();
+//                        List<LocationsItem> locationsItemList = db.getLocations();
+//
+//                        animalsItemList.forEach(item -> animalRef.document("animal" +
+//                                String.format("%05d", item.getAnimalId())).set(item));
+//                        effectTypesItemList.forEach(item -> effTypeRef.document(
+//                                "effect_type" + String.format("%05d", item.getId())).set(item));
+//                        itemsItemList.forEach(item -> itemRef.document("item" +
+//                                String.format("%05d", item.getId())).set(item));
+//                        locationsItemList.forEach(item -> locRef.document("location" +
+//                                String.format("%05d", item.getId())).set(item));
+                    } else {
+                        Toast.makeText(baseApplication, "안드로이드 N 이상 기기만 가능합니다.",
+                                Toast.LENGTH_SHORT).show();
+                    }
                 }
+                break;
+            case 3:
+                event.setValue("START");
                 break;
             default:
                 break;

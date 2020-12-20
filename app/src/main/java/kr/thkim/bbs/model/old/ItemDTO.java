@@ -1,6 +1,7 @@
-package kr.thkim.bbs.model;
+package kr.thkim.bbs.model.old;
 
 import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class ItemDTO implements Serializable {

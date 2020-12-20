@@ -39,11 +39,11 @@ public final class GlobalBinding {
                         rect.centerX()+rect.width()/4,
                         rect.centerY()+rect.height()/4);
                 if(half.contains((int)event.getRawX(),(int)event.getRawY())){
-                    RxBus.get().post(EVENT_TOUCH_MAP_ID,(Integer)mapId);
                     view.setAlpha(
                             view.getAlpha()>0 ?
                                     0f:1f
                     );
+                    RxBus.get().post(EVENT_TOUCH_MAP_ID,(Integer)mapId);
                     return true;
                 }
                 return false;

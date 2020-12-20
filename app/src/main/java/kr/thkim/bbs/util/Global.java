@@ -12,7 +12,10 @@ public final class Global {
      * android-bbs-719ab
      *
      */
-    public static final String ITEM_INFO = "item_info";
+    public static final String FS_DB_ITEM_INFO = "item_info";
+    public static final String FS_DB_LOCATION_INFO = "location_info";
+    public static final String FS_DB_EFFECT_TYPES = "effect_types";
+    public static final String FS_DB_ANIMAL_INFO = "animal_info";
 
 }
 
