@@ -19681,5 +19681,23 @@
       "eng_desc": "",
       "val_type": "int"
     }
+  ],
+  "characters": [
+    {
+      "id": 0,
+      "name": "재키",
+      "eng_name": "Jacky",
+      "weapons": [
+        "도끼","단검"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "아야",
+      "eng_name": "aya",
+      "weapons": [
+        "저격총","돌격 소총"
+      ]
+    }
   ]
 }

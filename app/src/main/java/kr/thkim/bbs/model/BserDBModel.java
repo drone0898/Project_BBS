@@ -17,6 +17,11 @@ public class BserDBModel {
 	@SerializedName("items")
 	private List<ItemsItem> items;
 
+	@SerializedName("characters")
+	private List<CharacterItem> characters;
+
+
+
 	public List<LocationsItem> getLocations(){
 		return locations;
 	}

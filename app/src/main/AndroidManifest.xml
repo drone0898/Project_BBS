@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project_BBS"
+        android:theme="@style/Theme.BBS"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.activity.IntroActivity">
             <intent-filter>

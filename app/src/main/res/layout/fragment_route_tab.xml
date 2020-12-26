@@ -9,7 +9,7 @@
             type="kr.thkim.bbs.ui.fragment.RouteTabFragment" />
         <variable
             name="viewModel"
-            type="kr.thkim.bbs.vm.RouteViewModel" />
+            type="kr.thkim.bbs.vm.RouteTabViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

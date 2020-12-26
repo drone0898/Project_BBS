@@ -12,14 +12,101 @@
                     type="kr.thkim.bbs.vm.MyProfileViewModel" />
             </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!--        <include-->
-        <!--            android:id="@+id/in"-->
-        <!--            layout="@layout/layout_dev"-->
-        <!--            app:activity="@{activity}"-->
-        <!--            app:viewModel="@{viewModel}" />-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_begin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp"/>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/login_profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="32dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="@id/guide_begin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_plz_login" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/my_page_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:letterSpacing="-0.1"
+                android:lineSpacingExtra="16sp"
+                android:minWidth="71dp"
+                android:paddingLeft="13dp"
+                android:paddingTop="3dp"
+                android:paddingRight="13dp"
+                android:paddingBottom="2dp"
+                android:stateListAnimator="@null"
+                android:text="@string/my_page"
+                android:textSize="12sp"
+                android:visibility="invisible"
+                app:backgroundTint="@color/color_border"
+                app:cornerRadius="16dp"
+                app:iconPadding="0dp"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintStart_toEndOf="@+id/login_info"
+                app:layout_constraintTop_toTopOf="@+id/login_profile_image"
+                tools:text="마이페이지" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/login_info"
+                style="@style/Theme.BBS.clickable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:clickable="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@id/login_profile_image"
+                app:layout_constraintEnd_toStartOf="@+id/my_page_btn"
+                app:layout_constraintStart_toEndOf="@id/login_profile_image"
+                app:layout_constraintTop_toTopOf="@+id/login_profile_image"
+                tools:text="로그인 및 회원가입" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/color_on_primary"
+                app:layout_constraintEnd_toEndOf="@id/guide_end"
+                app:layout_constraintStart_toStartOf="@id/guide_begin"
+                app:layout_constraintTop_toBottomOf="@id/login_profile_image" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/plz_enter_id"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="test123"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/guide_begin"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 </layout>

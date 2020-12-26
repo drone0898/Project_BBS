@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <style name="Theme.Project_BBS.circle_button" parent="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon">
+    <style name="Theme.BBS.circle_button" parent="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon">
         <item name="iconSize">24dp</item>
         <item name="iconGravity">textStart</item>
         <item name="android:padding">0dp</item>
@@ -13,5 +13,12 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetRight">0dp</item>
         <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Theme.BBS.clickable">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 </resources>
