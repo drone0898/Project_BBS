@@ -3,10 +3,14 @@ package kr.thkim.bbs.binding;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.hwangjr.rxbus.RxBus;
 
 import androidx.databinding.BindingAdapter;
+import kr.thkim.bbs.R;
+import kr.thkim.bbs.model.adapter.ImageButton;
 
 import static kr.thkim.bbs.util.BusTag.EVENT_TOUCH_MAP_ID;
 
@@ -50,4 +54,17 @@ public final class GlobalBinding {
             }
         });
     }
+
+    @BindingAdapter(value={"srcItemGlide"})
+    public static void setSrcItemGlide(View view, ImageButton item){
+        if(item==null){
+            return;
+        }
+        if(item.getSrc()!=0){
+            Glide.with(view).load(item.getSrc()).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+        }else if(item.getSrcUrl()!=null && !item.getSrcUrl().equals("")){
+            Glide.with(view).load(item.getSrcUrl()).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+        }
+    }
+
 }

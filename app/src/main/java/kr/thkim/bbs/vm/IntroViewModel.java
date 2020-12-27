@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import kr.thkim.bbs.database.LocalCachingManager;
 import kr.thkim.bbs.model.BserDBModel;
+import kr.thkim.bbs.util.LoggerUtil;
 import kr.thkim.bbs.util.ParseUtil;
 
 public class IntroViewModel extends BaseViewModel {
@@ -23,8 +24,13 @@ public class IntroViewModel extends BaseViewModel {
     public void setCacheDB() {
         compositeDisposable.add(Completable.fromAction(() -> {
                     String json = ParseUtil.loadJSONFromAsset(baseApplication, "db.json");
-                    BserDBModel db = ParseUtil.fromJson(json, BserDBModel.class);
-                    LocalCachingManager.getInstance().setCacheDB(db);
+                    if(json!=null){
+                        BserDBModel db = ParseUtil.fromJson(json, BserDBModel.class);
+                        LocalCachingManager.getInstance().setCacheDB(db);
+                    }else{
+                        LoggerUtil.e("intro db json null exception");
+                        event.setValue(LOADING_ERROR);
+                    }
                 }
         )
                 .subscribeOn(Schedulers.io())

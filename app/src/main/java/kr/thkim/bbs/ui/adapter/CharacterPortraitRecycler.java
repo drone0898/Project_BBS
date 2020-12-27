@@ -1,14 +1,18 @@
 package kr.thkim.bbs.ui.adapter;
 
+import com.hwangjr.rxbus.RxBus;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ItemCharacterRoutePortraitBinding;
+import kr.thkim.bbs.model.adapter.CharacterPortrait;
+import kr.thkim.bbs.util.BusTag;
 
 public class CharacterPortraitRecycler extends
-        ImageButtonRecycler<ItemCharacterRoutePortraitBinding,CharacterPortrait> {
+        ImageButtonRecycler<ItemCharacterRoutePortraitBinding, CharacterPortrait> {
 
     public static CharacterPortraitRecycler setAdapter(RecyclerView view){
         CharacterPortraitRecycler adapter = (CharacterPortraitRecycler) view.getAdapter();
@@ -36,6 +40,7 @@ public class CharacterPortraitRecycler extends
 //                recyclerView.addItemDecoration(decoration);
 //            }
         }
+        view.setAdapter(adapter);
         return adapter;
     }
 
@@ -47,6 +52,9 @@ public class CharacterPortraitRecycler extends
     @Override
     public void onBindViewHolder(@NonNull ImageButtonViewHolder holder, int position) {
         holder.bind(itemList.get(position),position);
+        holder.itemBinding.imgView.setOnClickListener(view ->
+                RxBus.get().post(BusTag.EVENT_CHARACTER_PORTRAIT,
+                        itemList.get(position).getItem().getId()));
 //        holder.itemBinding.imgView.setOnClickListener();
     }
 

@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.BR;
+import kr.thkim.bbs.model.adapter.ImageButton;
 
 public abstract class ImageButtonRecycler <T extends ViewDataBinding,I extends ImageButton>
         extends RecyclerView.Adapter<ImageButtonRecycler<T,I>.ImageButtonViewHolder> {

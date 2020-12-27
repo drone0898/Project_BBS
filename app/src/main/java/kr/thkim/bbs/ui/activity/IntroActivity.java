@@ -25,19 +25,18 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewM
 
     @Override
     protected void initDataBinding() {
-        if(BuildConfig.DEBUG){
-            startTargetActivity(DevActivity.class,null,false);
-        }else{
-            startTargetActivity(MapViewActivity.class,null,false);
-        }
     }
 
     @Override
     protected void eventBinding() {
-        viewModel.event.observe(this,event->{
-            switch(event){
+        viewModel.event.observe(this, event -> {
+            switch (event) {
                 default:
-                    startTargetActivity(MainActivity.class,null,false);
+                    if (BuildConfig.DEBUG) {
+                        startTargetActivity(DevActivity.class, null, false);
+                    } else {
+                        startTargetActivity(MainActivity.class, null, false);
+                    }
                     break;
             }
         });

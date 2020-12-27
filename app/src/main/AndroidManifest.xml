@@ -22,6 +22,7 @@
         <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.MapViewActivity"/>
         <activity android:name=".ui.activity.DevActivity"/>
+        <activity android:name=".ui.activity.RouteActivity"/>
     </application>
 
 </manifest>

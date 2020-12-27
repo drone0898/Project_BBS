@@ -19688,16 +19688,139 @@
       "name": "재키",
       "eng_name": "Jacky",
       "weapons": [
-        "도끼","단검"
+        "도끼","단검","양손검","쌍검"
       ]
     },
     {
       "id": 1,
       "name": "아야",
-      "eng_name": "aya",
+      "eng_name": "Aya",
       "weapons": [
-        "저격총","돌격 소총"
+        "저격총","돌격 소총","저격총"
+      ]
+    },{
+      "id": 2,
+      "name": "현우",
+      "eng_name": "Hyunwoo",
+      "weapons": [
+        "톤파","글러브"
       ]
     }
+  ,{
+      "id": 3,
+      "name": "매그너스",
+      "eng_name": "Magnus",
+      "weapons": [
+        "망치","방망이"
+      ]
+    },{
+      "id": 4,
+      "name": "피오라",
+      "eng_name": "Fiora",
+      "weapons": [
+        "레이피어","양손검","창"
+      ]
+    },{
+      "id": 5,
+      "name": "나딘",
+      "eng_name": "Nadine",
+      "weapons": [
+        "활","석궁"
+      ]
+    },{
+      "id": 6,
+      "name": "자히르",
+      "eng_name": "Zahir",
+      "weapons": [
+        "투척","암기"
+      ]
+    },{
+      "id": 7,
+      "name": "하트",
+      "eng_name": "Hart",
+      "weapons": [
+        "기타"
+      ]
+    },{
+      "id": 8,
+      "name": "아이솔",
+      "eng_name": "Isol",
+      "weapons": [
+        "돌격 소총"
+      ]
+    },{
+      "id": 9,
+      "name": "리 다이린",
+      "eng_name": "Li Dailin",
+      "weapons": [
+        "글러브","쌍절곤"
+      ]
+    },{
+      "id": 10,
+      "name": "유키",
+      "eng_name": "Yuki",
+      "weapons": [
+        "양손검","쌍검"
+      ]
+    },{
+      "id": 11,
+      "name": "혜진",
+      "eng_name": "Hyejin",
+      "weapons": [
+        "활","암기"
+      ]
+    },{
+      "id": 12,
+      "name": "쇼우",
+      "eng_name": "Xiukai",
+      "weapons": [
+        "창","단검"
+      ]
+    },{
+      "id": 13,
+      "name": "시셀라",
+      "eng_name": "Sissela",
+      "weapons": [
+        "암기","투척"
+      ]
+    },{
+      "id": 14,
+      "name": "키아라",
+      "eng_name": "Chiara",
+      "weapons": [
+        "레이피어"
+      ]
+    },{
+      "id": 15,
+      "name": "아드리아나",
+      "eng_name": "Adriana",
+      "weapons": [
+        "투척"
+      ]
+    },{
+      "id": 16,
+      "name": "쇼이치",
+      "eng_name": "Shoichi",
+      "weapons": [
+        "단검"
+      ]
+    },{
+      "id": 17,
+      "name": "실비아",
+      "eng_name": "Silvia",
+      "weapons": [
+        "권총"
+      ]
+    },{
+      "id": 18,
+      "name": "엠마",
+      "eng_name": "Emma",
+      "weapons": [
+        "암기"
+      ]
+    }
+  ],
+  "weaponkinds": [
+    "단검","양손검","도끼","쌍검","권총","돌격 소총","저격총","글러브","톤파","방망이","망치","활","석궁","레이피어","창","투척","암기","기타","쌍절곤","채찍"
   ]
 }

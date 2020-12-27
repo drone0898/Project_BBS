@@ -6,7 +6,7 @@
             <data>
                 <variable
                     name="item"
-                    type="kr.thkim.bbs.ui.adapter.CharacterPortrait" />
+                    type="kr.thkim.bbs.model.adapter.CharacterPortrait" />
                 <variable
                     name="position"
                     type="int" />
@@ -14,9 +14,11 @@
 
     <ImageView
         android:id="@+id/img_view"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@color/color_none"
-        android:scaleType="centerInside"
+        style="@style/Theme.BBS.clickable"
+        srcItemGlide="@{item}"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
         tools:src="@drawable/ertitle" />
 </layout>

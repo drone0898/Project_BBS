@@ -2,6 +2,7 @@ package kr.thkim.bbs.vm;
 
 import android.app.Application;
 import android.content.Intent;
+import android.os.Bundle;
 
 import com.hwangjr.rxbus.RxBus;
 
@@ -40,6 +41,7 @@ public abstract class BaseViewModel extends AndroidViewModel implements Lifecycl
     public CompositeDisposable compositeDisposable = new CompositeDisposable();
     public SingleLiveEvent<String> event = new SingleLiveEvent<>();
     public SingleLiveEvent<Intent> intentEvent = new SingleLiveEvent<>();
+    public SingleLiveEvent<Bundle> bundleEvent = new SingleLiveEvent<>();
 
     public BaseViewModel(@NonNull Application application) {
         super(application);

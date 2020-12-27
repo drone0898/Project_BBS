@@ -20,6 +20,9 @@ public class BserDBModel {
 	@SerializedName("characters")
 	private List<CharacterItem> characters;
 
+	@SerializedName("weaponkinds")
+	private List<String> weaponkinds;
+
 
 
 	public List<LocationsItem> getLocations(){
@@ -36,5 +39,13 @@ public class BserDBModel {
 
 	public List<ItemsItem> getItems(){
 		return items;
+	}
+
+	public List<CharacterItem> getCharacters() {
+		return characters;
+	}
+
+	public List<String> getWeaponkinds() {
+		return weaponkinds;
 	}
 }

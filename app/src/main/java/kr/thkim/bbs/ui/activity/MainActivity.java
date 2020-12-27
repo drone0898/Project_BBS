@@ -45,6 +45,7 @@ public class MainActivity extends BaseFragmentActivity<ActivityMainBinding, Main
     protected void initDataBinding() {
         mainTabAdapter = setViewPagerAdapter(binding.mainViewpager);
         ArrayList<MainTabModel> tabs = getTabModels();
+        binding.mainViewpager.setUserInputEnabled(false); // 스와이프 불가능
         binding.mainViewpager.setOffscreenPageLimit(tabs.size()); // 모든 탭을 로딩하도록 만듬
         mainTabAdapter.setItemList(tabs);
         tabItemBindings = new LayoutTabItemBinding[tabs.size()];

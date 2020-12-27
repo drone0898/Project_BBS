@@ -9,6 +9,7 @@ import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Objects;
 
 import androidx.annotation.NonNull;
@@ -109,5 +110,18 @@ public class BaseApplication extends MultiDexApplication {
                 return BuildConfig.DEBUG;
             }
         });
+    }
+
+    /**
+     * @param filePrefix 파일이름 ("char001.png" => "char")
+     * @param digit 자리수 ("001.png" => 3)
+     * @param id id ("001.png" => 1)
+     * @return resourceId, 없으면 기본이미지
+     */
+    public static int getDrawableFileResId(String filePrefix,int digit,int id){
+        int result = baseApplication.getResources().getIdentifier(filePrefix + String.format(
+                Locale.KOREAN, "%0"+digit+"d",id),"drawable",getBaseApplication()
+                .getPackageName());
+        return result == 0 ? R.drawable.bser : result;
     }
 }

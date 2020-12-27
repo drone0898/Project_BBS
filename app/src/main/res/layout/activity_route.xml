@@ -3,20 +3,131 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-            <data>
-                <variable
-                    name="activity"
-                    type="kr.thkim.bbs.ui.activity.RouteActivity" />
-                <variable
-                    name="viewModel"
-                    type="kr.thkim.bbs.vm.RouteViewModel" />
-            </data>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="activity"
+            type="kr.thkim.bbs.ui.activity.RouteActivity" />
+        <variable
+            name="viewModel"
+            type="kr.thkim.bbs.vm.RouteViewModel" />
+        
+        <variable
+            name="character"
+            type="kr.thkim.bbs.model.adapter.CharacterPortrait" />
+        <variable
+            name="equip_kind"
+            type="String" />
+
+        <variable
+            name="select_item_visibility"
+            type="int" />
+    </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
         android:fitsSystemWindows="true">
-        
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:fitsSystemWindows="true"
+            android:overScrollMode="never"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:overScrollMode="never"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <include
+                    android:id="@+id/include_map"
+                    layout="@layout/layout_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="parallax" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin">
+
+                    <ImageView
+                        android:id="@+id/selected_character_portrait"
+                        android:layout_width="45dp"
+                        android:layout_height="0dp"
+                        android:scaleType="fitStart"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/char000"
+                        android:src="@drawable/char000"/>
+
+                    <TextView
+                        android:id="@+id/selected_equip_kind"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:gravity="center"
+                        android:text="재키 - 단검"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/selected_character_portrait"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="재키 - 단검"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/top_nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/item_one_line_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:background="@color/color_background_dark"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/select_item_grid_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:background="@color/color_background_dark"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

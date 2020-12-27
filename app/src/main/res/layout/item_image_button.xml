@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+            <data>
+                <variable
+                    name="item"
+                    type="kr.thkim.bbs.model.adapter.ImageButton" />
+                <variable
+                    name="position"
+                    type="int" />
+            </data>
+
+    <ImageView
+        android:id="@+id/img_view"
+        style="@style/Theme.BBS.clickable"
+        srcItemGlide="@{item}"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ertitle" />
+</layout>

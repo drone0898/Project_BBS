@@ -10,11 +10,13 @@
     <color name="color_on_secondary">#ff017d</color>
 
 
-
     <color name="color_white">#FFFFFFFF</color>
     <color name="color_black">#FF000000</color>
     <color name="color_border">#e6e6e6</color>
     <color name="color_none">#8B9498</color>
+
+
+    <color name="color_transparent">#00FFFFFF</color>
 
 
     <color name="white">#FFFFFFFF</color>

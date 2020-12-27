@@ -14,6 +14,7 @@
             android:id="@+id/map_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
             android:scaleType="centerCrop"
             android:src="@drawable/map"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -38,6 +39,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.0" />
 
+        <TextView
+            android:id="@+id/mh0_text"
+            android:text="@string/mh0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh0"
+            app:layout_constraintEnd_toEndOf="@id/mh0"
+            app:layout_constraintStart_toStartOf="@id/mh0"
+            app:layout_constraintTop_toTopOf="@id/mh0"
+             />
+
         <ImageView
             android:id="@+id/mh1"
             mapId="@{1}"
@@ -52,7 +67,21 @@
             app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintVertical_bias="0.185" />
+
+        <TextView
+            android:id="@+id/mh1_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mh1"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintBottom_toBottomOf="@id/mh1"
+            app:layout_constraintEnd_toEndOf="@id/mh1"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="@id/mh1"
+            app:layout_constraintTop_toTopOf="@id/mh1"
+            app:layout_constraintVertical_bias="0.5" />
 
         <ImageView
             android:id="@+id/mh2"
@@ -69,6 +98,20 @@
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.69" />
+        
+        <TextView
+            android:id="@+id/mh2_text"
+            android:text="@string/mh2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh2"
+            app:layout_constraintEnd_toEndOf="@id/mh2"
+            app:layout_constraintStart_toStartOf="@id/mh2"
+            app:layout_constraintTop_toTopOf="@id/mh2"
+            />
 
         <ImageView
             android:id="@+id/mh3"
@@ -86,6 +129,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.835" />
 
+        <TextView
+            android:id="@+id/mh3_text"
+            android:text="@string/mh3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh3"
+            app:layout_constraintEnd_toEndOf="@id/mh3"
+            app:layout_constraintStart_toStartOf="@id/mh3"
+            app:layout_constraintTop_toTopOf="@id/mh3"
+            />
+
         <ImageView
             android:id="@+id/mh4"
             mapId="@{4}"
@@ -101,6 +158,20 @@
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.21" />
+
+        <TextView
+            android:id="@+id/mh4_text"
+            android:text="@string/mh4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh4"
+            app:layout_constraintEnd_toEndOf="@id/mh4"
+            app:layout_constraintStart_toStartOf="@id/mh4"
+            app:layout_constraintTop_toTopOf="@id/mh4"
+            />
 
         <ImageView
             android:id="@+id/mh5"
@@ -118,6 +189,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.89" />
 
+        <TextView
+            android:id="@+id/mh5_text"
+            android:text="@string/mh5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh5"
+            app:layout_constraintEnd_toEndOf="@id/mh5"
+            app:layout_constraintStart_toStartOf="@id/mh5"
+            app:layout_constraintTop_toTopOf="@id/mh5"
+            />
+
         <ImageView
             android:id="@+id/mh6"
             mapId="@{6}"
@@ -132,6 +217,20 @@
             app:layout_constraintHorizontal_bias="0.31"
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <TextView
+            android:id="@+id/mh6_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mh6"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintBottom_toBottomOf="@id/mh6"
+            app:layout_constraintEnd_toEndOf="@id/mh6"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@id/mh6"
+            app:layout_constraintTop_toTopOf="@id/mh6"
             app:layout_constraintVertical_bias="0.6" />
 
         <ImageView
@@ -150,6 +249,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="1.0" />
 
+        <TextView
+            android:id="@+id/mh7_text"
+            android:text="@string/mh7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh7"
+            app:layout_constraintEnd_toEndOf="@id/mh7"
+            app:layout_constraintStart_toStartOf="@id/mh7"
+            app:layout_constraintTop_toTopOf="@id/mh7"
+            />
+
         <ImageView
             android:id="@+id/mh8"
             mapId="@{8}"
@@ -165,6 +278,19 @@
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.57" />
+
+        <TextView
+            android:id="@+id/mh8_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mh8"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintBottom_toBottomOf="@id/mh8"
+            app:layout_constraintEnd_toEndOf="@id/mh8"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@id/mh8"
+            app:layout_constraintTop_toTopOf="@id/mh8" />
 
         <ImageView
             android:id="@+id/mh9"
@@ -182,6 +308,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.42" />
 
+        <TextView
+            android:id="@+id/mh9_text"
+            android:text="@string/mh9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh9"
+            app:layout_constraintEnd_toEndOf="@id/mh9"
+            app:layout_constraintStart_toStartOf="@id/mh9"
+            app:layout_constraintTop_toTopOf="@id/mh9"
+            />
+
         <ImageView
             android:id="@+id/mh10"
             mapId="@{10}"
@@ -197,6 +337,19 @@
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.51" />
+
+        <TextView
+            android:id="@+id/mh10_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mh10"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintBottom_toBottomOf="@id/mh10"
+            app:layout_constraintEnd_toEndOf="@id/mh10"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="@id/mh10"
+            app:layout_constraintTop_toTopOf="@id/mh10" />
 
         <ImageView
             android:id="@+id/mh11"
@@ -214,6 +367,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.45" />
 
+        <TextView
+            android:id="@+id/mh11_text"
+            android:text="@string/mh11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh11"
+            app:layout_constraintEnd_toEndOf="@id/mh11"
+            app:layout_constraintStart_toStartOf="@id/mh11"
+            app:layout_constraintTop_toTopOf="@id/mh11"
+            />
+
         <ImageView
             android:id="@+id/mh12"
             mapId="@{12}"
@@ -230,6 +397,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.65" />
 
+        <TextView
+            android:id="@+id/mh12_text"
+            android:text="@string/mh12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh12"
+            app:layout_constraintEnd_toEndOf="@id/mh12"
+            app:layout_constraintStart_toStartOf="@id/mh12"
+            app:layout_constraintTop_toTopOf="@id/mh12"
+            />
+
         <ImageView
             android:id="@+id/mh13"
             mapId="@{13}"
@@ -241,10 +422,24 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintHorizontal_bias="0.33"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.27" />
+            app:layout_constraintVertical_bias="0.28" />
+
+        <TextView
+            android:id="@+id/mh13_text"
+            android:text="@string/mh13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh13"
+            app:layout_constraintEnd_toEndOf="@id/mh13"
+            app:layout_constraintStart_toStartOf="@id/mh13"
+            app:layout_constraintTop_toTopOf="@id/mh13"
+            />
 
         <ImageView
             android:id="@+id/mh14"
@@ -262,6 +457,20 @@
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.22" />
 
+        <TextView
+            android:id="@+id/mh14_text"
+            android:text="@string/mh14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintBottom_toBottomOf="@id/mh14"
+            app:layout_constraintEnd_toEndOf="@id/mh14"
+            app:layout_constraintStart_toStartOf="@id/mh14"
+            app:layout_constraintTop_toTopOf="@id/mh14"
+            />
+
         <ImageView
             android:id="@+id/mh15"
             mapId="@{15}"
@@ -277,6 +486,19 @@
             app:layout_constraintStart_toStartOf="@+id/map_image"
             app:layout_constraintTop_toTopOf="@+id/map_image"
             app:layout_constraintVertical_bias="0.85" />
+
+        <TextView
+            android:id="@+id/mh15_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/mh15"
+            app:drawableStartCompat="@drawable/ic_none_24"
+            app:layout_constraintBottom_toBottomOf="@id/mh15"
+            app:layout_constraintEnd_toEndOf="@id/mh15"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="@id/mh15"
+            app:layout_constraintTop_toTopOf="@id/mh15" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

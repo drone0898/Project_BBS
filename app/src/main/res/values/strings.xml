@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">Project_BBS</string>
     <string name="my_page">마이페이지</string>
+    <string name="route_build">루트 빌드</string>
+    <string name="route_list">루트 목록</string>
+    <string name="mh0">골목길</string>
+    <string name="mh1">양궁장</string>
+    <string name="mh2">묘지</string>
+    <string name="mh3">성당</string>
+    <string name="mh4">번화가</string>
+    <string name="mh5">공장</string>
+    <string name="mh6">숲</string>
+    <string name="mh7">항구</string>
+    <string name="mh8">병원</string>
+    <string name="mh9">호텔</string>
+    <string name="mh10">연구소</string>
+    <string name="mh11">연못</string>
+    <string name="mh12">모래사장</string>
+    <string name="mh13">학교</string>
+    <string name="mh14">절</string>
+    <string name="mh15">고급 주택가</string>
 </resources>

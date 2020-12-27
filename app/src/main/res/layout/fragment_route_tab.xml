@@ -15,11 +15,63 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent" android:layout_height="match_parent">
 
-        <!--        <include-->
-        <!--            android:id="@+id/in"-->
-        <!--            layout="@layout/layout_dev"-->
-        <!--            app:activity="@{activity}"-->
-        <!--            app:viewModel="@{viewModel}" />-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_primary_dark"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabContentStart="0dp"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabPadding="0dp"
+            app:tabPaddingBottom="0dp"
+            app:tabPaddingEnd="0dp"
+            app:tabPaddingStart="0dp"
+            app:tabPaddingTop="0dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/route_build"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/route_list"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/character_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:clipToPadding="false"
+            android:overScrollMode="always"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            tools:listitem="@layout/item_character_route_portrait"
+            android:background="@color/color_background_dark"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/equip_kind_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_recycler"
+            tools:listitem="@layout/item_character_route_portrait"
+            android:backgroundTint="@color/color_background_dark"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
