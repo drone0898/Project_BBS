@@ -3,7 +3,8 @@ package kr.thkim.bbs.model;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class AnimalsItem{
+//야생동물 db
+public class AnimalModel {
 
 	@SerializedName("animal_name")
 	private String animalName;

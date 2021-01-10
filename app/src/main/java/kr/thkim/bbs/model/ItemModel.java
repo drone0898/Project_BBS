@@ -3,13 +3,14 @@ package kr.thkim.bbs.model;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class ItemsItem{
+// 아이템 db
+public class ItemModel {
 
 	@SerializedName("drop")
-	private List<DropItem> drop;
+	private List<AnimalDropModel> drop;
 
 	@SerializedName("acq_loc")
-	private List<AcqLocItem> acqLoc;
+	private List<AcqLocModel> acqLoc;
 
 	@SerializedName("eng_desc")
 	private String engDesc;
@@ -21,7 +22,7 @@ public class ItemsItem{
 	private String grade;
 
 	@SerializedName("effect")
-	private List<EffectItem> effect;
+	private List<EffectModel> effect;
 
 	@SerializedName("name")
 	private String name;
@@ -41,11 +42,11 @@ public class ItemsItem{
 	@SerializedName("desc")
 	private String desc;
 
-	public List<DropItem> getDrop(){
+	public List<AnimalDropModel> getDrop(){
 		return drop;
 	}
 
-	public List<AcqLocItem> getAcqLoc(){
+	public List<AcqLocModel> getAcqLoc(){
 		return acqLoc;
 	}
 
@@ -61,7 +62,7 @@ public class ItemsItem{
 		return grade;
 	}
 
-	public List<EffectItem> getEffect(){
+	public List<EffectModel> getEffect(){
 		return effect;
 	}
 

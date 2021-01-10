@@ -5,19 +5,8 @@ import android.app.Application;
 import android.os.Build;
 import android.widget.Toast;
 
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.List;
-
 import androidx.annotation.NonNull;
 
-import kr.thkim.bbs.model.AnimalsItem;
-import kr.thkim.bbs.model.BserDBModel;
-import kr.thkim.bbs.model.EffectTypesItem;
-import kr.thkim.bbs.model.ItemsItem;
-import kr.thkim.bbs.model.LocationsItem;
-import kr.thkim.bbs.util.Global;
 import kr.thkim.bbs.util.ParseUtil;
 
 public class DevViewModel extends BaseViewModel {

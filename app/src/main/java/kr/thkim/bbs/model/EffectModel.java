@@ -2,7 +2,7 @@ package kr.thkim.bbs.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class EffectItem{
+public class EffectModel {
 
 	@SerializedName("effect_type_id")
 	private int effectTypeId;

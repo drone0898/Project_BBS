@@ -7,4 +7,5 @@ public final class BusTag {
 
     public static final String EVENT_CHARACTER_PORTRAIT = "EVENT_CHARACTER_PORTRAIT";
     public static final String EVENT_EQUIP_KIND = "EVENT_EQUIP_KIND";
+    public static final String EVENT_ADD_ONE_LINE_ITEM = "EVENT_ADD_ONE_LINE_ITEM"; // 아이템 선택
 }

@@ -23,7 +23,7 @@ public final class Global {
      *
      */
 
-    public static final String START_ROUTE_CHARACTER = "START_ROUTE_CHARACTER";
+    public static final String START_ROUTE_CHARACTER_PORTRAIT_RES_ID = "START_ROUTE_CHARACTER_PORTRAIT_RES_ID";
     public static final String START_ROUTE_EQUIP_KIND = "START_ROUTE_EQUIP_KIND";
 }
 

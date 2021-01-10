@@ -2,19 +2,20 @@ package kr.thkim.bbs.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DropItemsItem{
-
-	@SerializedName("amount")
-	private int amount;
+// 조합 재료
+public class CombMatModel {
 
 	@SerializedName("item_id")
 	private int itemId;
 
-	public int getAmount(){
-		return amount;
-	}
+	@SerializedName("req")
+	private int req;
 
 	public int getItemId(){
 		return itemId;
+	}
+
+	public int getReq(){
+		return req;
 	}
 }

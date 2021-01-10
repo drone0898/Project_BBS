@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="kr.thkim.bbs.R"/>
+        <variable
+            name="item"
+            type="kr.thkim.bbs.model.adapter.AdapterBsItem" />
+        <variable
+            name="position"
+            type="int" />
+    </data>
+
+    <ImageView
+        android:id="@+id/img_view"
+        style="@style/Theme.BBS.clickable"
+        android:background="@drawable/round_outline"
+        srcItemGlide="@{item}"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="true"
+        />
+</layout>

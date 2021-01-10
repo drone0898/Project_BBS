@@ -1,6 +1,7 @@
 package kr.thkim.bbs.binding;
 
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,9 +9,13 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.hwangjr.rxbus.RxBus;
 
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.BindingAdapter;
+import kr.thkim.bbs.BaseApplication;
 import kr.thkim.bbs.R;
 import kr.thkim.bbs.model.adapter.ImageButton;
+import kr.thkim.bbs.util.LoggerUtil;
 
 import static kr.thkim.bbs.util.BusTag.EVENT_TOUCH_MAP_ID;
 
@@ -61,9 +66,26 @@ public final class GlobalBinding {
             return;
         }
         if(item.getSrc()!=0){
-            Glide.with(view).load(item.getSrc()).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+//            Glide.with(view).load(item.getSrc()).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+//            --> 위의 코드를 쓰면 리사이클러 맨마지막 아이템이 직전아이템이랑 똑같은 버그있음 엠마 이미지가 나와야하는데 실비아가나옴 ㅡㅡ;
+            // http://bumptech.github.io/glide/doc/getting-started.html#listview-and-recyclerview clear문제..?
+            // 그러나 해결안됨.. 일단 해결보류.
+            ImageView iv = (ImageView) view;
+            iv.setImageDrawable(ContextCompat.getDrawable(BaseApplication.getBaseApplication(),item.getSrc()));
         }else if(item.getSrcUrl()!=null && !item.getSrcUrl().equals("")){
             Glide.with(view).load(item.getSrcUrl()).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+        }
+    }
+
+    @BindingAdapter(value={"srcByResId"})
+    public static void setSrcByResId(View view, int resId){
+        if(resId!=0){
+            Glide.with(view).load(resId).placeholder(R.drawable.ic_wifi_off).thumbnail(.1f).into((ImageView) view);
+//            --> 위의 코드를 쓰면 리사이클러 맨마지막 아이템이 직전아이템이랑 똑같은 버그있음 엠마 이미지가 나와야하는데 실비아가나옴 ㅡㅡ;
+            // http://bumptech.github.io/glide/doc/getting-started.html#listview-and-recyclerview clear문제..?
+            // 그러나 해결안됨.. 일단 해결보류.
+//            ImageView iv = (ImageView) view;
+//            iv.setImageDrawable(ContextCompat.getDrawable(BaseApplication.getBaseApplication(),resId));
         }
     }
 

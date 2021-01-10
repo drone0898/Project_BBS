@@ -1,12 +1,11 @@
 package kr.thkim.bbs.model;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
-public class LocationsItem{
+public class EffectTypesModel {
 
-	@SerializedName("drop_items")
-	private List<DropItemsItem> dropItems;
+	@SerializedName("eng_desc")
+	private String engDesc;
 
 	@SerializedName("name")
 	private String name;
@@ -14,14 +13,17 @@ public class LocationsItem{
 	@SerializedName("eng_name")
 	private String engName;
 
-	@SerializedName("gen_animals")
-	private List<GenAnimalsItem> genAnimals;
-
 	@SerializedName("id")
 	private int id;
 
-	public List<DropItemsItem> getDropItems(){
-		return dropItems;
+	@SerializedName("val_type")
+	private String valType;
+
+	@SerializedName("desc")
+	private String desc;
+
+	public String getEngDesc(){
+		return engDesc;
 	}
 
 	public String getName(){
@@ -32,11 +34,15 @@ public class LocationsItem{
 		return engName;
 	}
 
-	public List<GenAnimalsItem> getGenAnimals(){
-		return genAnimals;
-	}
-
 	public int getId(){
 		return id;
+	}
+
+	public String getValType(){
+		return valType;
+	}
+
+	public String getDesc(){
+		return desc;
 	}
 }

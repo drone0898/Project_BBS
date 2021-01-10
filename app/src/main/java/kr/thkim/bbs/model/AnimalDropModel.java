@@ -2,7 +2,8 @@ package kr.thkim.bbs.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DropItem{
+// 야생동물 드랍 아이템
+public class AnimalDropModel {
 
 	@SerializedName("chance")
 	private double chance;

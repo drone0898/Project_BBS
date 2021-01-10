@@ -1,15 +1,15 @@
 package kr.thkim.bbs.model.adapter;
 
-import kr.thkim.bbs.model.CharacterItem;
+import kr.thkim.bbs.model.CharacterModel;
 
 public class CharacterPortrait extends ImageButton {
-    private CharacterItem item;
+    private CharacterModel item;
 
-    public CharacterItem getItem() {
+    public CharacterModel getItem() {
         return item;
     }
 
-    public void setItem(CharacterItem item) {
+    public void setItem(CharacterModel item) {
         this.item = item;
     }
 

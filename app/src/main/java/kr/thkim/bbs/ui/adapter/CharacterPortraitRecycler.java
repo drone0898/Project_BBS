@@ -53,9 +53,7 @@ public class CharacterPortraitRecycler extends
     public void onBindViewHolder(@NonNull ImageButtonViewHolder holder, int position) {
         holder.bind(itemList.get(position),position);
         holder.itemBinding.imgView.setOnClickListener(view ->
-                RxBus.get().post(BusTag.EVENT_CHARACTER_PORTRAIT,
-                        itemList.get(position).getItem().getId()));
+                RxBus.get().post(BusTag.EVENT_CHARACTER_PORTRAIT, itemList.get(position)));
 //        holder.itemBinding.imgView.setOnClickListener();
     }
-
 }

@@ -3,45 +3,46 @@ package kr.thkim.bbs.model;
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
 
+//캐싱 db를 위한 모델
 public class BserDBModel {
 
 	@SerializedName("locations")
-	private List<LocationsItem> locations;
+	private List<LocationModel> locations;
 
 	@SerializedName("animals")
-	private List<AnimalsItem> animals;
+	private List<AnimalModel> animals;
 
 	@SerializedName("effect_types")
-	private List<EffectTypesItem> effectTypes;
+	private List<EffectTypesModel> effectTypes;
 
 	@SerializedName("items")
-	private List<ItemsItem> items;
+	private List<ItemModel> items;
 
 	@SerializedName("characters")
-	private List<CharacterItem> characters;
+	private List<CharacterModel> characters;
 
 	@SerializedName("weaponkinds")
 	private List<String> weaponkinds;
 
 
 
-	public List<LocationsItem> getLocations(){
+	public List<LocationModel> getLocations(){
 		return locations;
 	}
 
-	public List<AnimalsItem> getAnimals(){
+	public List<AnimalModel> getAnimals(){
 		return animals;
 	}
 
-	public List<EffectTypesItem> getEffectTypes(){
+	public List<EffectTypesModel> getEffectTypes(){
 		return effectTypes;
 	}
 
-	public List<ItemsItem> getItems(){
+	public List<ItemModel> getItems(){
 		return items;
 	}
 
-	public List<CharacterItem> getCharacters() {
+	public List<CharacterModel> getCharacters() {
 		return characters;
 	}
 

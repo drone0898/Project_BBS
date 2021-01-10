@@ -19,4 +19,6 @@
     <string name="mh13">학교</string>
     <string name="mh14">절</string>
     <string name="mh15">고급 주택가</string>
+    <string name="show_stat">스탯</string>
+    <string name="search_route">최적경로</string>
 </resources>

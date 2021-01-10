@@ -2,7 +2,8 @@ package kr.thkim.bbs.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AcqLocItem{
+// 획득장소 db
+public class AcqLocModel {
 
 	@SerializedName("amount")
 	private int amount;

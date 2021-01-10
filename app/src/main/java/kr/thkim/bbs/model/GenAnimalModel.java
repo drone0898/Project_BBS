@@ -2,7 +2,7 @@ package kr.thkim.bbs.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class GenAnimalsItem{
+public class GenAnimalModel {
 
 	@SerializedName("amount")
 	private int amount;
