@@ -1,13 +1,11 @@
 package kr.thkim.bbs.vm;
 
-import android.app.Application;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import kr.thkim.bbs.R;
@@ -39,10 +37,6 @@ public class RouteViewModel extends BaseViewModel {
         if (_selectedEquipList.getValue() != null && _selectedEquipList.getValue().get(listIdx) != null) {
             _selectedEquipList.getValue().get(listIdx).remove(equip);
         }
-    }
-
-    public RouteViewModel(@NonNull Application application) {
-        super(application);
     }
 
     public void onClickAddItem(View view, AdapterBsItem item, int position) {
