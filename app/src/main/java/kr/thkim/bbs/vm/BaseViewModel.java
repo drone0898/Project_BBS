@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.ViewModel;
 import io.reactivex.disposables.CompositeDisposable;
 import kr.thkim.bbs.BaseApplication;
 import kr.thkim.bbs.arch.SingleLiveEvent;
@@ -31,22 +32,16 @@ import kr.thkim.bbs.arch.SingleLiveEvent;
  *
  * @author taeheunkim on 2020.10.22
  */
-public abstract class BaseViewModel extends AndroidViewModel implements LifecycleObserver {
+public abstract class BaseViewModel extends ViewModel implements LifecycleObserver {
 
     protected final String TAG = getClass().getSimpleName();
 
     protected boolean keepRxBusWhenPaused = false; // false => unregister onPaused, true => unregister onDestroy
 
-    protected BaseApplication baseApplication;
     public CompositeDisposable compositeDisposable = new CompositeDisposable();
     public SingleLiveEvent<String> event = new SingleLiveEvent<>();
     public SingleLiveEvent<Intent> intentEvent = new SingleLiveEvent<>();
     public SingleLiveEvent<Bundle> bundleEvent = new SingleLiveEvent<>();
-
-    public BaseViewModel(@NonNull Application application) {
-        super(application);
-        baseApplication = (BaseApplication) application;
-    }
 
     // 작동순서 : BASE's onCreate() -> BASE's onCreate() End. -> this ON_CREATE
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)

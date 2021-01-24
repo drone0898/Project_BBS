@@ -14,13 +14,9 @@ import kr.thkim.bbs.util.BusTag;
 
 public class MapViewViewModel extends BaseViewModel {
 
-    public MapViewViewModel(@NonNull Application application) {
-        super(application);
-    }
-
     @Subscribe(tags = @Tag(BusTag.EVENT_TOUCH_MAP_ID))
     public void onClickHighlight(Integer id){
-        BserDBModel cacheDB = LocalCachingManager.getInstance().getCacheDB();
-        Toast.makeText(baseApplication, cacheDB.getLocations().get(id).getName(), Toast.LENGTH_SHORT).show();
+//        BserDBModel cacheDB = LocalCachingManager.getInstance().getCacheDB();
+//        Toast.makeText(baseApplication, cacheDB.getLocations().get(id).getName(), Toast.LENGTH_SHORT).show();
     }
 }

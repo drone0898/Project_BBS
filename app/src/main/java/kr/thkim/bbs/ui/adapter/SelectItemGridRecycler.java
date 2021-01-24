@@ -2,7 +2,6 @@ package kr.thkim.bbs.ui.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.R;
@@ -18,10 +17,10 @@ public class SelectItemGridRecycler extends ImageButtonRecycler<ItemSelectItemGr
         super(viewModel);
     }
 
-    public static ItemOneLineRecycler setAdapter(RecyclerView view, RouteViewModel viewModel) {
-        ItemOneLineRecycler adapter = (ItemOneLineRecycler) view.getAdapter();
+    public static SelectItemGridRecycler setAdapter(RecyclerView view, RouteViewModel viewModel) {
+        SelectItemGridRecycler adapter = (SelectItemGridRecycler) view.getAdapter();
         if (adapter == null) {
-            adapter = new ItemOneLineRecycler(viewModel);
+            adapter = new SelectItemGridRecycler(viewModel);
             if (view.getOnFlingListener() == null) {
                 LinearSnapHelper snapHelper = new LinearSnapHelper();
                 snapHelper.attachToRecyclerView(view);

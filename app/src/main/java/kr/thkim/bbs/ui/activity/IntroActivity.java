@@ -40,6 +40,6 @@ public class IntroActivity extends BaseActivity<ActivityIntroBinding, IntroViewM
                     break;
             }
         });
-        viewModel.setCacheDB();
+        viewModel.setCacheDB(this);
     }
 }

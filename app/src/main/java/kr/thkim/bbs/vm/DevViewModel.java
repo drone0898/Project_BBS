@@ -3,6 +3,7 @@ package kr.thkim.bbs.vm;
 import android.annotation.SuppressLint;
 import android.app.Application;
 import android.os.Build;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -11,18 +12,14 @@ import kr.thkim.bbs.util.ParseUtil;
 
 public class DevViewModel extends BaseViewModel {
 
-    public DevViewModel(@NonNull Application application) {
-        super(application);
-    }
-
     @SuppressLint("DefaultLocale")
-    public void onClickDebugBtn(int id) {
+    public void onClickDebugBtn(View view, int id) {
         switch (id) {
             case 1:
-                String json = ParseUtil.loadJSONFromAsset(baseApplication, "db.json");
+                String json = ParseUtil.loadJSONFromAsset(view.getContext(), "db.json");
                 if (json != null) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Toast.makeText(baseApplication, "NO",
+                        Toast.makeText(view.getContext(), "NO",
                                 Toast.LENGTH_SHORT).show();
 //                        CollectionReference animalRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_ANIMAL_INFO);
 //                        CollectionReference effTypeRef = FirebaseFirestore.getInstance().collection(Global.FS_DB_EFFECT_TYPES);
@@ -45,7 +42,7 @@ public class DevViewModel extends BaseViewModel {
 //                        locationsItemList.forEach(item -> locRef.document("location" +
 //                                String.format("%05d", item.getId())).set(item));
                     } else {
-                        Toast.makeText(baseApplication, "안드로이드 N 이상 기기만 가능합니다.",
+                        Toast.makeText(view.getContext(), "안드로이드 N 이상 기기만 가능합니다.",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }

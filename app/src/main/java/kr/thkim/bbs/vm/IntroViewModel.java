@@ -1,6 +1,7 @@
 package kr.thkim.bbs.vm;
 
 import android.app.Application;
+import android.content.Context;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,13 +24,9 @@ public class IntroViewModel extends BaseViewModel {
     public static final String END_LOADING = "END_LOADING";
     public static final String LOADING_ERROR = "LOADING_ERROR";
 
-    public IntroViewModel(@NonNull Application application) {
-        super(application);
-    }
-
-    public void setCacheDB() {
+    public void setCacheDB(Context context) {
         compositeDisposable.add(Completable.fromAction(() -> {
-                    String json = ParseUtil.loadJSONFromAsset(baseApplication, "db.json");
+                    String json = ParseUtil.loadJSONFromAsset(context, "db.json");
                     if (json != null) {
                         BserDBModel db = ParseUtil.fromJson(json, BserDBModel.class);
                         Set<String> equipSet = new HashSet<>();

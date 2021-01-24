@@ -1,6 +1,5 @@
 package kr.thkim.bbs.vm;
 
-import android.app.Application;
 import android.os.Bundle;
 
 import com.hwangjr.rxbus.annotation.Subscribe;
@@ -9,7 +8,6 @@ import com.hwangjr.rxbus.annotation.Tag;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import kr.thkim.bbs.BaseApplication;
@@ -29,11 +27,6 @@ public class RouteTabViewModel extends BaseViewModel {
     public LiveData<List<ImageButton>> equipKindList = _equipKindList;
 
     private int currentCharacterResId;
-
-
-    public RouteTabViewModel(@NonNull Application application) {
-        super(application);
-    }
 
     @Subscribe(tags = @Tag(BusTag.EVENT_CHARACTER_PORTRAIT))
     public void onClickCharacter(CharacterPortrait item){

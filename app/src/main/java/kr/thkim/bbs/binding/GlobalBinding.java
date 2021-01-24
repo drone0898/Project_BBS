@@ -96,6 +96,7 @@ public final class GlobalBinding {
     @BindingAdapter(value = {"setFilterChipItems", "viewModel"})
     public static void setFilterChipItems(ChipGroup view, LiveData<Set<String>> chipItems,
                                           RouteViewModel viewModel) {
+        view.removeAllViews();
         if (chipItems != null && chipItems.getValue() != null) {
             Integer idx = 0;
             for (String item : chipItems.getValue()) {
@@ -103,13 +104,7 @@ public final class GlobalBinding {
                 chip.setText(item);
                 chip.setCheckable(true);
                 int finalIdx = idx;
-                chip.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                    if (isChecked) {
-                        viewModel.addSelectedEquipList(item, finalIdx);
-                    } else {
-                        viewModel.removeSelectedEquipList(item, finalIdx);
-                    }
-                });
+                chip.setOnCheckedChangeListener((buttonView, isChecked) -> viewModel.setOnCheckedChange(buttonView,isChecked,item));
                 view.addView(chip);
                 chip.setChecked(idx.equals(viewModel.currentSelItemIndex.getValue()));
                 idx++;

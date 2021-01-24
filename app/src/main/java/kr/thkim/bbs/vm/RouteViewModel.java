@@ -17,7 +17,7 @@ import kr.thkim.bbs.util.LoggerUtil;
 
 public class RouteViewModel extends BaseViewModel {
 
-    MutableLiveData<List<AdapterBsItem>> _itemOneLineRecyclerItem = new MutableLiveData<>();
+    MutableLiveData<List<AdapterBsItem>> _itemOneLineRecyclerItem = new MutableLiveData<>(); // 아이템 추가버튼들
     MutableLiveData<List<AdapterBsItem>> _selectItemRecyclerItem = new MutableLiveData<>();
     MutableLiveData<Set<String>> _selectItemEquipFilterList = new MutableLiveData<>();
     MutableLiveData<List<Set<String>>> _selectedEquipList = new MutableLiveData<>();
@@ -29,14 +29,14 @@ public class RouteViewModel extends BaseViewModel {
     public LiveData<List<Set<String>>> selectedEquipList = _selectedEquipList;
     public LiveData<Integer> currentSelItemIndex = _currentSelItemIndex;
 
-    public void addSelectedEquipList(String equip, int listIdx){
-        if(_selectedEquipList.getValue()!=null && _selectedEquipList.getValue().get(listIdx) != null){
+    public void addSelectedEquipList(String equip, int listIdx) {
+        if (_selectedEquipList.getValue() != null && _selectedEquipList.getValue().get(listIdx) != null) {
             _selectedEquipList.getValue().get(listIdx).add(equip);
         }
     }
 
-    public void removeSelectedEquipList(String equip, int listIdx){
-        if(_selectedEquipList.getValue()!=null && _selectedEquipList.getValue().get(listIdx) != null){
+    public void removeSelectedEquipList(String equip, int listIdx) {
+        if (_selectedEquipList.getValue() != null && _selectedEquipList.getValue().get(listIdx) != null) {
             _selectedEquipList.getValue().get(listIdx).remove(equip);
         }
     }
@@ -45,18 +45,28 @@ public class RouteViewModel extends BaseViewModel {
         super(application);
     }
 
-    public void onClickAddItem(View view, AdapterBsItem item, int position){
+    public void onClickAddItem(View view, AdapterBsItem item, int position) {
         LoggerUtil.d("click");
+        _selectItemEquipFilterList.setValue(LocalCachingManager.getInstance().getCacheDB().getEquipkinds()); // 칩 업데이트
+        _currentSelItemIndex.setValue(position);
     }
 
-    public void setRecyclerItem(){
+    public void setOnCheckedChange(View button, boolean isChecked, String equip) {
+        int index = currentSelItemIndex.getValue();
+        if (isChecked) {
+            addSelectedEquipList(equip, index);
+        } else {
+            removeSelectedEquipList(equip, index);
+        }
+    }
+
+    public void setRecyclerItem() {
         List<AdapterBsItem> list = new ArrayList<>();
-        for(int i=0;i<6;i++){
+        for (int i = 0; i < 6; i++) {
             AdapterBsItem adapterBsItem = new AdapterBsItem();
             adapterBsItem.setSrc(R.drawable.ic_add);
             list.add(adapterBsItem);
         }
         _itemOneLineRecyclerItem.setValue(list);
-        _selectItemEquipFilterList.setValue(LocalCachingManager.getInstance().getCacheDB().getEquipkinds());
     }
 }

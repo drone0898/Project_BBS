@@ -1,12 +1,8 @@
 package kr.thkim.bbs.ui.adapter;
 
-import android.app.Dialog;
-import android.view.View;
-
 import com.hwangjr.rxbus.RxBus;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,14 +10,19 @@ import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ItemImageButtonBinding;
 import kr.thkim.bbs.model.adapter.ImageButton;
 import kr.thkim.bbs.util.BusTag;
+import kr.thkim.bbs.vm.RouteTabViewModel;
 
 public class EquipKindRecycler extends
-        ImageButtonRecycler<ItemImageButtonBinding, ImageButton> {
+        ImageButtonRecycler<ItemImageButtonBinding, ImageButton,RouteTabViewModel> {
 
-    public static EquipKindRecycler setAdapter(RecyclerView view){
+    public EquipKindRecycler(RouteTabViewModel viewModel) {
+        super(viewModel);
+    }
+
+    public static EquipKindRecycler setAdapter(RecyclerView view, RouteTabViewModel viewModel){
         EquipKindRecycler adapter = (EquipKindRecycler) view.getAdapter();
-        if(view.getAdapter() == null){
-            adapter = new EquipKindRecycler();
+        if(adapter == null){
+            adapter = new EquipKindRecycler(viewModel);
             if (view.getOnFlingListener() == null) {
                 LinearSnapHelper snapHelper = new LinearSnapHelper();
                 snapHelper.attachToRecyclerView(view);
