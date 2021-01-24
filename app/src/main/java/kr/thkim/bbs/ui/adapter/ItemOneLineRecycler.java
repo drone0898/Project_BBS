@@ -12,14 +12,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ItemOneLineBsItemBinding;
 import kr.thkim.bbs.model.adapter.AdapterBsItem;
+import kr.thkim.bbs.vm.RouteViewModel;
 
-public class ItemOneLineRecycler extends ImageButtonRecycler<ItemOneLineBsItemBinding, AdapterBsItem>
+public class ItemOneLineRecycler extends ImageButtonRecycler<ItemOneLineBsItemBinding, AdapterBsItem, RouteViewModel>
         implements DraggableTouchHelper.DraggableTouchHelpListener {
 
-    public static ItemOneLineRecycler setAdapter(RecyclerView view) {
+    public ItemOneLineRecycler(RouteViewModel viewModel) {
+        super(viewModel);
+    }
+
+    public static ItemOneLineRecycler setAdapter(RecyclerView view, RouteViewModel viewModel) {
         ItemOneLineRecycler adapter = (ItemOneLineRecycler) view.getAdapter();
         if (view.getAdapter() == null) {
-            adapter = new ItemOneLineRecycler();
+            adapter = new ItemOneLineRecycler(viewModel);
             if (view.getOnFlingListener() == null) {
                 LinearSnapHelper snapHelper = new LinearSnapHelper();
                 snapHelper.attachToRecyclerView(view);

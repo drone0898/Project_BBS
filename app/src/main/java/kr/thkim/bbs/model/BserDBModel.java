@@ -1,6 +1,8 @@
 package kr.thkim.bbs.model;
 
 import java.util.List;
+import java.util.Set;
+
 import com.google.gson.annotations.SerializedName;
 
 //캐싱 db를 위한 모델
@@ -23,6 +25,8 @@ public class BserDBModel {
 
 	@SerializedName("weaponkinds")
 	private List<String> weaponkinds;
+
+	private Set<String> equipkinds;
 
 
 
@@ -48,5 +52,13 @@ public class BserDBModel {
 
 	public List<String> getWeaponkinds() {
 		return weaponkinds;
+	}
+
+	public Set<String> getEquipkinds() {
+		return equipkinds;
+	}
+
+	public void setEquipkinds(Set<String> equipkinds) {
+		this.equipkinds = equipkinds;
 	}
 }

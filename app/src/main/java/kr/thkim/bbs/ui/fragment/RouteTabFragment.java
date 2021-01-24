@@ -31,7 +31,7 @@ public class RouteTabFragment extends BaseFragment<FragmentRouteTabBinding, Rout
     @Override
     protected void initDataBinding() {
         equipKindRecycler = EquipKindRecycler.setAdapter(binding.equipKindRecycler);
-        characterPortraitRecycler = CharacterPortraitRecycler.setAdapter(binding.characterRecycler);
+        characterPortraitRecycler = CharacterPortraitRecycler.setAdapter(binding.characterRecycler,viewModel);
     }
 
     @Override

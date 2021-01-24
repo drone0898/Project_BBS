@@ -12,11 +12,17 @@ import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.BR;
 import kr.thkim.bbs.model.adapter.ImageButton;
+import kr.thkim.bbs.vm.BaseViewModel;
 
-public abstract class ImageButtonRecycler <T extends ViewDataBinding,I extends ImageButton>
-        extends RecyclerView.Adapter<ImageButtonRecycler<T,I>.ImageButtonViewHolder> {
+public abstract class ImageButtonRecycler <T extends ViewDataBinding,I extends ImageButton, V extends BaseViewModel>
+        extends RecyclerView.Adapter<ImageButtonRecycler<T,I,V>.ImageButtonViewHolder> {
 
     protected List<I> itemList;
+    protected V viewModel;
+
+    public ImageButtonRecycler(V viewModel){
+        this.viewModel = viewModel;
+    }
 
     protected abstract int getLayoutResourceId();
 
@@ -48,7 +54,7 @@ public abstract class ImageButtonRecycler <T extends ViewDataBinding,I extends I
     }
 
     @Override
-    public abstract void onBindViewHolder(@NonNull ImageButtonRecycler<T,I>.ImageButtonViewHolder holder, int position);
+    public abstract void onBindViewHolder(@NonNull ImageButtonRecycler<T,I,V>.ImageButtonViewHolder holder, int position);
 
     @Override
     public int getItemCount() {
@@ -65,6 +71,7 @@ public abstract class ImageButtonRecycler <T extends ViewDataBinding,I extends I
         }
 
         void bind(I item,int position){
+            itemBinding.setVariable(BR.viewModel, viewModel);
             itemBinding.setVariable(BR.item, item);
             itemBinding.setVariable(BR.position, position);
         }

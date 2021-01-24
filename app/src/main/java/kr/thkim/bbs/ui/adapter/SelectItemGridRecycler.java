@@ -1,28 +1,41 @@
 package kr.thkim.bbs.ui.adapter;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ItemSelectItemGridBinding;
 import kr.thkim.bbs.model.adapter.AdapterBsItem;
+import kr.thkim.bbs.vm.RouteViewModel;
 
-public class SelectItemGridRecycler extends ImageButtonRecycler<ItemSelectItemGridBinding, AdapterBsItem> {
+public class SelectItemGridRecycler extends ImageButtonRecycler<ItemSelectItemGridBinding, AdapterBsItem, RouteViewModel> {
 
-    public static ItemOneLineRecycler setAdapter(RecyclerView view) {
+    public static final int SELECT_ITEM_SPAN_COUNT = 6;
+
+    public SelectItemGridRecycler(RouteViewModel viewModel) {
+        super(viewModel);
+    }
+
+    public static ItemOneLineRecycler setAdapter(RecyclerView view, RouteViewModel viewModel) {
         ItemOneLineRecycler adapter = (ItemOneLineRecycler) view.getAdapter();
-        if (view.getAdapter() == null) {
-            adapter = new ItemOneLineRecycler();
+        if (adapter == null) {
+            adapter = new ItemOneLineRecycler(viewModel);
             if (view.getOnFlingListener() == null) {
                 LinearSnapHelper snapHelper = new LinearSnapHelper();
                 snapHelper.attachToRecyclerView(view);
             }
 
             if (view.getLayoutManager() == null) {
-                LinearLayoutManager manager = new LinearLayoutManager(view.getContext());
-                manager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                view.setLayoutManager(manager);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(),
+                        SELECT_ITEM_SPAN_COUNT, GridLayoutManager.VERTICAL, false);
+                view.setLayoutManager(gridLayoutManager);
+            }
+            if (view.getItemDecorationCount() <= 0) {
+                int sideMargin = (int) view.getResources().getDimension(R.dimen.select_item_grid_margin);
+                GridSpacingItemDecoration decoration = new GridSpacingItemDecoration(SELECT_ITEM_SPAN_COUNT, sideMargin, true);
+                view.addItemDecoration(decoration);
             }
         }
         view.setAdapter(adapter);

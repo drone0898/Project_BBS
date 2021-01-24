@@ -10,14 +10,19 @@ import kr.thkim.bbs.R;
 import kr.thkim.bbs.databinding.ItemCharacterRoutePortraitBinding;
 import kr.thkim.bbs.model.adapter.CharacterPortrait;
 import kr.thkim.bbs.util.BusTag;
+import kr.thkim.bbs.vm.RouteTabViewModel;
 
 public class CharacterPortraitRecycler extends
-        ImageButtonRecycler<ItemCharacterRoutePortraitBinding, CharacterPortrait> {
+        ImageButtonRecycler<ItemCharacterRoutePortraitBinding, CharacterPortrait, RouteTabViewModel> {
 
-    public static CharacterPortraitRecycler setAdapter(RecyclerView view){
+    public CharacterPortraitRecycler(RouteTabViewModel viewModel) {
+        super(viewModel);
+    }
+
+    public static CharacterPortraitRecycler setAdapter(RecyclerView view, RouteTabViewModel viewModel){
         CharacterPortraitRecycler adapter = (CharacterPortraitRecycler) view.getAdapter();
-        if(view.getAdapter() == null){
-            adapter = new CharacterPortraitRecycler();
+        if(adapter == null){
+            adapter = new CharacterPortraitRecycler(viewModel);
             if (view.getOnFlingListener() == null) {
                 LinearSnapHelper snapHelper = new LinearSnapHelper();
                 snapHelper.attachToRecyclerView(view);

@@ -2,6 +2,11 @@ package kr.thkim.bbs.vm;
 
 import android.app.Application;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import androidx.annotation.NonNull;
 import io.reactivex.Completable;
 import io.reactivex.Scheduler;
@@ -9,6 +14,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import kr.thkim.bbs.database.LocalCachingManager;
 import kr.thkim.bbs.model.BserDBModel;
+import kr.thkim.bbs.model.ItemModel;
 import kr.thkim.bbs.util.LoggerUtil;
 import kr.thkim.bbs.util.ParseUtil;
 
@@ -24,10 +30,21 @@ public class IntroViewModel extends BaseViewModel {
     public void setCacheDB() {
         compositeDisposable.add(Completable.fromAction(() -> {
                     String json = ParseUtil.loadJSONFromAsset(baseApplication, "db.json");
-                    if(json!=null){
+                    if (json != null) {
                         BserDBModel db = ParseUtil.fromJson(json, BserDBModel.class);
+                        Set<String> equipSet = new HashSet<>();
+                        db.setEquipkinds(
+                                db.getItems().stream().filter(item -> {
+                                    if (equipSet.contains(item.getEquip())) {
+                                        return false;
+                                    } else {
+                                        equipSet.add(item.getEquip());
+                                        return true;
+                                    }
+                                }).map(ItemModel::getEquip).collect(Collectors.toSet())
+                        );
                         LocalCachingManager.getInstance().setCacheDB(db);
-                    }else{
+                    } else {
                         LoggerUtil.e("intro db json null exception");
                         event.setValue(LOADING_ERROR);
                     }

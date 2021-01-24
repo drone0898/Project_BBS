@@ -11,7 +11,6 @@
         <variable
             name="viewModel"
             type="kr.thkim.bbs.vm.RouteViewModel" />
-        
         <variable
             name="characterResId"
             type="int" />
@@ -115,18 +114,41 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/item_one_line_recycler"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_background_dark"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_one_line_bs_item"
+                    tools:itemCount="6"/>
+
+                <HorizontalScrollView
+                    android:id="@+id/filter_scroll"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:overScrollMode="never"
-                    android:clipToPadding="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:background="@color/color_background_dark"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:scrollbars="none"
                     app:layout_constraintEnd_toEndOf="parent"
-                    tools:listitem="@layout/item_one_line_bs_item"
-                />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_one_line_recycler">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/activity_group"
+                        setFilterChipItems="@{viewModel.selectItemEquipFilterList}"
+                        viewModel="@{viewModel}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        app:singleSelection="false">
+
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/select_item_grid_recycler"
@@ -135,9 +157,8 @@
                     android:orientation="horizontal"
                     android:overScrollMode="never"
                     android:clipToPadding="false"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:background="@color/color_background_dark"
-                    app:layout_constraintTop_toBottomOf="@id/item_one_line_recycler"
+                    app:layout_constraintTop_toBottomOf="@id/filter_scroll"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     />
